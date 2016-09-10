@@ -4,13 +4,16 @@
 		<meta charset = "utf-8">
 	</head>
 	<body>
-		<script>
-alert('Я \u2014 JavaScript');
-		</script>
-		<div id = "Test">
-			<p><b>BOLD TEXT</b><br />
-			<em>ITALIC TEXT</em>
-			<strike>fdfd</strike></p>
-		</div>
+		<iframe id="dic" src="dic.txt" onload="load();" style="display: none;"></iframe>
+		<form name = "word">
+			<label for = "in">Введите слово: <label>
+			<input type = "text" name = "in" autofocus></input>
+			<input type = "submit" value = "Искать слова"></input>
+		</form>
+	<div id = "results">
+		<p id = "counter"></p>
+		<p id = "words"></p>
+	</div>
+		<script src = "script.js"></script>
 	</body>
 </html>
