@@ -48,7 +48,7 @@ function run()
 					break;
 				}
 
-		if (n == s.length)
+		if (n == s.length && s != word)
 		{
 			++number;
 			res.appendChild (document.createTextNode (s));
