@@ -16,8 +16,8 @@ function load()
     var oFrame = document.getElementById("dic");
     var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     dic = strRawContents.split("\n");
-    for (var i = 0; i < dic.length; i++)
-        var curLine = dic[i];
+//    for (var i = 0; i < dic.length; i++)
+//        var curLine = dic[i];
 }
 
 function run()
