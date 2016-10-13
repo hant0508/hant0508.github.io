@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/preview.css" media="screen">
     <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
@@ -86,10 +87,8 @@ even drag and drop files.</p>
 <table>
 <thead>
 <tr>
-<th align="center"><a href="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/gif%201.gif" target="_blank">
-  <img src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/gif%201.gif" alt="img"></a></th>
-<th align="center"><a href="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/gif%202.gif" target="_blank">
-   <img src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/gif%202.gif" alt="img"></a></th>
+<th align="center"><img class="preview" alt="Usage on GNOME 3" src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/gif%201.gif" onclick="preview(this);"></th>
+<th align="center"><img class="preview" alt="Drag-and-drop GNOME 3"src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/gif%202.gif" onclick="preview(this);"></th>
 </tr>
 </thead>
 <tbody>
@@ -103,12 +102,9 @@ even drag and drop files.</p>
 <table>
 <thead>
 <tr>
-<th align="center"><a href="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/kde.png" target="_blank">
-  <img src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/kde.png" alt="alt-text" title="KDE 5"></a></th>
-<th align="center"><a href="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/cinnamon.png" target="_blank">
-  <img src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/cinnamon.png" alt="alt-text" title="Cinnamon 3"></a></th>
-<th align="center"><a href="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/xfce4.png" target="_blank">
-  <img src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/xfce4.png" alt="alt-text" title="XFCE 4"></a></th>
+<th align="center"><img class="preview" alt="KDE 5" src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/kde.png" title="KDE 5" onclick="preview(this);"></th>
+<th align="center"><img class="preview" alt="Cinnamon 3" src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/cinnamon.png" title="Cinnamon 3" onclick="preview(this);"></th>
+<th align="center"><img class="preview" alt="XFCE 4" src="https://raw.githubusercontent.com/hant0508/tmp/master/startup-settings/xfce4.png" title="XFCE 4" onclick="preview(this);"></th>
 </tr>
 </thead>
 <tbody>
@@ -119,6 +115,14 @@ even drag and drop files.</p>
 </tr>
 </tbody>
 </table>
+
+<div id="myModal" class="modal">
+<span class="close">&#10006;</span>
+<div class="modal-content">
+<img class="modal-img" id="img01">
+</div>
+<div id="caption"></div>
+</div>
 
 <h3>
 <a id="feedback" class="anchor" href="#feedback" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Feedback</h3>
@@ -132,5 +136,6 @@ GitHub account.</p>
         <span class="site-footer-owner"><a href="https://github.com/hant0508/startup-settings">Startup settings</a> is maintained by <a href="https://github.com/hant0508">hant0508</a>.</span>
       </footer>
     </section>
+		<script type="text/javascript" src="preview.js"></script>
   </body>
 </html>
