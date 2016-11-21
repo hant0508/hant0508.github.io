@@ -23,6 +23,9 @@ function run()
 	var number = 0;
 	var res = document.getElementById("words");
 	
+	res.parentNode.removeChild(res);
+	res.innerHTML="";
+	
 	for (var j = 0; j < dic.length - 1; ++j)
 	{
 		var s = dic[j];
