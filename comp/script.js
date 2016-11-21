@@ -16,21 +16,13 @@ function load()
     var oFrame = document.getElementById("dic");
     var strRawContents = oFrame.contentWindow.document.body.childNodes[0].innerHTML;
     dic = strRawContents.split("\n");
-//    for (var i = 0; i < dic.length; i++)
-//        var curLine = dic[i];
 }
 
 function run()
 {
 	var number = 0;
 	var res = document.getElementById("words");
-	if (typeof(res) != 'undefined' && res != null)
-	{
-			res.parentNode.removeChild(res);
-			res = document.createElement ("p");
-			res.id = "words";
-	}
-
+	
 	for (var j = 0; j < dic.length - 1; ++j)
 	{
 		var s = dic[j];
