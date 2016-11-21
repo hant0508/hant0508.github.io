@@ -30,7 +30,7 @@ function run()
 	{
 		var s = dic[j];
 		var c = [];
-		for (var i = 0; i < 50; ++i)
+		for (var i = 0; i < word.length; ++i)
 			c[i] = false;
 		var n = 0;
 
