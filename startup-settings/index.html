@@ -15,7 +15,10 @@
       <h1 class="project-name">Startup settings</h1>
       <h2 class="project-tagline">Manage your startup applications on GNU/Linux</h2>
       <a href="https://github.com/hant0508/startup-settings" class="btn">View on GitHub</a>
-      <a href="https://github.com/hant0508/startup-settings/zipball/master" class="btn">Download .zip</a>
+      <a id="deb" href="https://github.com/hant0508/startup-settings/raw/master/debian/startup-settings-i386.deb" class="btn">Download .deb</a>
+      <script>
+        if (navigator.userAgent.match(/x86_64/i) || navigator.userAgent.match(/x64;/i) || navigator.userAgent.match(/x86-64/i) || navigator.userAgent.match(/x64_64/i)) document.getElementById("deb").href="https://github.com/hant0508/startup-settings/raw/master/debian/startup-settings-amd64.deb"
+      </script>
       <a href="https://github.com/hant0508/startup-settings/tarball/master" class="btn">Download .tar.gz</a>
     </section>
 
