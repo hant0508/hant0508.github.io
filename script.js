@@ -7,7 +7,5 @@ function inIframe()
     }
 }
 
-function f()
-{
-	if (inFrame()) alert('VK DERECTED');
-}
+alert("I'm alive!")
+if (inFrame()) alert("VK DERECTED");
