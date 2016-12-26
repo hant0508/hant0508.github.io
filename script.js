@@ -1,12 +1,15 @@
 function inIframe()
 {
-    try {
-        return window.self !== window.top;
-    } catch (e) {
-        return true;
-    }
+    try { return window.self !== window.top; }
+	catch (e) { return true; }
 }
 
-alert("I'm alive!")
-if (inIframe()) alert("VK DERECTED");
-else alert("hmmmm");
+if (inIframe())
+{
+	var content = document.getElementById("content");
+	content.innerHTML="";
+	var p = document.createElement("p");
+	p.innerHTML="Здесь пока ничего нет, но скоро что-то появится;)";
+//	alert("VK DETECTED");
+	content.appendChild(p);
+}
