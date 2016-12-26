@@ -2,19 +2,19 @@
 <html>
 	<head>
 		<meta charset = "utf-8"/>
-		<meta name=viewport content="width=device-width, initial-scale=1">
+		<meta name = viewport content="width=device-width, initial-scale=1">
 		<title>Наборщик</title>
 	</head>
 	<body>
-		<iframe id="dic" src="dic.txt" onload="load();" style="display: none;"></iframe>
-		<form name = "word">
+		<iframe id = "dic" src = "dic.txt" onload="load();" style = "display: none;"></iframe>
+		<form name = "word" style = "margin-bottom:10px;">
 			<label for = "in">Введите слово: </label>
 			<input type = "text" name = "in" autofocus></input>
 			<input type = "submit" value = "Искать слова"></input>
 		</form>
-	<div id = "results">
-		<p id = "counter"></p>
-		<p id = "words"></p>
+	<div id = "results" style = "max-height:60vh; max-width:500px; overflow:scroll;">
+		<p id = "counter" style = "width:100%;"></p>
+		<p id = "words" style = "height:100%; width=100%;"></p>
 	</div>
 		<script type = "text/javascript" src = "script.js"></script>
 	</body>
