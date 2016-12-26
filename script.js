@@ -8,4 +8,5 @@ function inIframe()
 }
 
 alert("I'm alive!")
-if (inFrame()) alert("VK DERECTED");
+if (inIframe()) alert("VK DERECTED");
+else alert("hmmmm");
