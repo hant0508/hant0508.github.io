@@ -1,2 +1,2 @@
 VK.init(function(){}, function(){}, 5.60);
-VK.callMethod("showSettingsBox", 8214);
+console.log (VK.callMethod("friends.get"));
