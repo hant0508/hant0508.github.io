@@ -1,2 +1,5 @@
 VK.init(function(){}, function(){}, 5.60);
-console.log (VK.callMethod("friends.get"));
+
+var p = document.createElement("p");
+p.innerHTML = VK.callMethod("friends.get");
+document.body.appendChild(p);
