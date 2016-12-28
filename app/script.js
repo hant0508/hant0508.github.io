@@ -8,5 +8,7 @@ var viewer_id = VK.params.viewer_id;
 VK.api("get_friends", {}, function(data) {
 	// обрабатываем полученные данные
 	// выводим имя и фамилию в блок user_info
-	document.getElementById('user_info').innerHTML = data.count + '<br />';
+	document.getElementById('user_info').innerHTML = data.response[0].count + '<br />';
+	data.response[0].items.forEach(function(item, i, data) {
+		document.getElementById('user_info').innerHTML = item + ' ';}
 });
