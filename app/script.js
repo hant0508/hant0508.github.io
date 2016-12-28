@@ -10,5 +10,5 @@ VK.api("get_friends", {}, function(data) {
 	// выводим имя и фамилию в блок user_info
 	document.getElementById('user_info').innerHTML = data.response[0].count + '<br />';
 	data.response[0].items.forEach(function(item, i, data) {
-		document.getElementById('user_info').innerHTML = item + ' ';}
+		document.getElementById('user_info').innerHTML = item + ' ';});
 });
