@@ -15,11 +15,17 @@ function setRes(str) {
 	res.innerHTML = str;
 }
 
-function out(s) {
-	if (time == -1) {
-		if (s == "...") s = "";
-		else s += ".";
-		window.setTimeout(function(){setRes("Считаем секунды"+s);out(s);}, 500);
+function out(dots, counter) {
+	if (time == -1 || counter < 3) {
+		if (dots == "...") dots = "";
+		else dots += ".";
+		if (counter > 20){
+			setRes("Мы перерыли все комменты за последние 8 лет, наняли частного детектива и даже изучили архивы Пентагона, но так и не смоги найти нужный коммент. <br /> Вы уверены, что он существует? Тогда напишите об этом на <a href=\"mailto:hant0508@gmail.com?subject=GitHub issue | /seconds\">hant0508@gmail.com</a>.");
+			url.focus();
+			url.select();
+			return;
+		}
+		window.setTimeout(function(){setRes("Считаем секунды"+dots);out(dots, ++counter);}, 500);
 		return;
 	}
 	var sec = " секунд";
@@ -40,7 +46,7 @@ function flood() {
 	window.setTimeout(function(){setRes("Звоним L4rever");}, 2000);
 	window.setTimeout(function(){setRes("Звоним L4rever.");}, 2500);
 	window.setTimeout(function(){setRes("Звоним L4rever..");}, 3000);
-	window.setTimeout(function(){setRes("Звоним L4rever..."); out("");}, 3500);
+	window.setTimeout(function(){setRes("Звоним L4rever..."); out("", 0);}, 3500);
 }
 
 document.forms.url.onsubmit = function() {
