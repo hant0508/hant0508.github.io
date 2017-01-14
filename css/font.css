@@ -1,0 +1,22 @@
+body {
+	margin: 10px;
+	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.1rem;
+	line-height: 1.5;
+	color: #606060;
+}
+
+a {
+	color: #0070c5;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline!important;
+	color: #33aaff!important;
+}
+
+a:visited {
+	text-decoration: none;
+	color: #175690;
+}
