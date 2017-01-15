@@ -6,6 +6,23 @@ body {
 	color: #606060;
 }
 
+.main-content {
+	max-width: 64rem;
+	padding: 2rem 6rem;
+	margin: 0 auto;
+}
+
+.sb {
+	text-shadow : 0 0 0
+}
+
+h1, h2, h3 {
+	margin-top: 2rem;
+	margin-bottom: 1rem;
+	font-weight: normal;
+	color: #159957;
+}
+
 a {
 	color: #0070c5;
 	text-decoration: none;

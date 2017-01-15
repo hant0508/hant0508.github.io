@@ -9,12 +9,18 @@
 		<title>Сколько секунд?</title>
 	</head>
 	<body>
-		<form name="url" style="margin-bottom:10px;">
-			<label for="in">Ссылка на коммент: </label>
-			<input id="url" type="url" name="in" autofocus=""></input>
-			<input type="submit" name="button" value="Считать секунды!"></input>
-		</form>
-		<div id="result"></div>
+		<div class="main-content">
+			<h1>Сколько секунд?</h1>
+			<p id="text">
+			L4rever взял перерыв, его последователи <s>не умеют считать</s> зачастую говорят неправильное время, а боты нестабильны и работают через раз. Как же теперь легко и быстро узнать, за сколько секунд Циник запостил бонус? Просто скопируйте ссылку на бонус и воспользуйтесь формой ниже! Специальный алгоритм даст дистанционного пинка лчетыререверу, тот посчитает секунды, а скрипт выведет их на экран.<br />Из-за особенностей вёрстки Пикабу <span class="sb">можно посчитать время только до первых 300 комментов</span> (по рейтингу). Но если вы залезли в комменты глубже, то, вероятно, и считать секунды вручную для вас &mdash; одно удовольствие:)
+			<p>
+			<form name="url" style="margin-bottom:10px;">
+				<label for="in" class="sb">Ссылка на коммент: </label>
+				<input id="url" type="url" name="in" autofocus=""></input>
+				<input type="submit" class="sb" name="button" value="Считать секунды!"></input>
+			</form>
+			<div id="result"></div>
+		</div>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="../js/jquery.xdomainajax.js"></script>
 		<script src="../js/an.js"></script>
