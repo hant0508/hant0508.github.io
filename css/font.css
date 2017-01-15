@@ -6,11 +6,18 @@ body {
 	color: #606060;
 }
 
-.main-content {
-	max-width: 64rem;
-	padding: 2rem 6rem;
-	margin: 0 auto;
-}
+@media screen and (max-width: 64em) {
+	.main-content {
+		max-width: 64rem;
+		padding: 2rem 6rem;
+		margin: 0 auto;
+} }
+
+@media screen and (max-width: 42em) {
+	.main-content {
+		padding: 2rem 1rem;
+		font-size: 1rem;
+} }
 
 .sb {
 	text-shadow : 0 0 0
