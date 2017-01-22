@@ -89,10 +89,13 @@ document.forms.url.onsubmit = function() {
 		return false;
 	}
 
-	else if (!comment.match(/#comment_\d/) || !str.match(/https?:\/\/(www\.)?pikabu\.ru\/story/)) {
+	else if (!comment.match(/#comment_\d/) || !str.match(/https?:\/\/(www\.)?(m\.)?pikabu\.ru\/story/)) {
 		fail(2);
 		return false;
 	}
+
+	if (post.match(/https?:\/\/(www\.)?m\.pikabu\.ru\/story/))
+		post = post.replace("m.pikabu", "pikabu");
 
 	$.get(post, seconds, "html");
 	flood();
