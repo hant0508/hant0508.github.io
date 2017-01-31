@@ -19,34 +19,34 @@ function setRes(str, add) {
 }
 
 function fail(code) {
-	switch(code) {
-		case 1:
-			setRes('Мы перерыли все комменты за последние 8 лет, наняли частного детектива и даже изучили архивы Пентагона, но так и не смогли найти нужный комментарий. Вы уверены, что он существует и не спрятан под кнопкой \'показать ещё\'? Тогда напишите об этом на <a href=\'mailto:hant0508@gmail.com?subject=GitHub issue | /seconds\'>hant0508@gmail.com</a>.');
-			break;
-		case 2:
-			setRes('С этим комментом что-то не так. <br /> Ссылка должна иметь вид <i>http://pikabu.ru/story/story_title#comment_12345678</i>');
-			break;
-		case 3:
-			break;
-	}
+    switch(code) {
+        case 1:
+            setRes('Мы перерыли все комменты за последние 8 лет, наняли частного детектива и даже изучили архивы Пентагона, но так и не смогли найти нужный комментарий. Вы уверены, что он существует и не спрятан под кнопкой \'показать ещё\'? Тогда напишите об этом на <a href=\'mailto:hant0508@gmail.com?subject=GitHub issue | /seconds\'>hant0508@gmail.com</a>.');
+            break;
+        case 2:
+            setRes('С этим комментом что-то не так. <br /> Ссылка должна иметь вид <i>http://pikabu.ru/story/story_title#comment_12345678</i>');
+            break;
+        case 3:
+            break;
+    }
 
-	url.focus();
-	url.select();
-	document.forms.url.button.disabled = false;
+    url.focus();
+    url.select();
+    document.forms.url.button.disabled = false;
 }
 
 function format(sec, gone, t) {
-	if (t % 100 < 10 || t % 100 > 20) {
-		if (t % 10 == 1) {
+    if (t % 100 < 10 || t % 100 > 20) {
+        if (t % 10 == 1) {
             sec += 'a';
             gone += 'a ';
         }
-		else if (t % 10 < 5 && t % 10) {
+        else if (t % 10 < 5 && t % 10) {
             sec += 'ы';
             gone += 'и ';
         }
         else gone += 'o ';
-	}
+    }
     else gone += 'о ';
 
     return {sec:sec, gone:gone};
@@ -54,7 +54,7 @@ function format(sec, gone, t) {
 
 function success() {
     var words = format (' секунд', 'прошл', time);
-	setRes('C момента публикации поста ' + words.gone + time + words.sec);
+    setRes('C момента публикации поста ' + words.gone + time + words.sec);
 
     if (isInt(diff))
     {
@@ -62,21 +62,21 @@ function success() {
         setRes('<br /> Ответ был оставлен за ' + diff + words.sec, 'add');
     }
 
-	url.focus();
-	url.select();
-	document.forms.url.button.disabled = false;
+    url.focus();
+    url.select();
+    document.forms.url.button.disabled = false;
 }
 
 function out(dots, counter) {
-	if (time == -1 || counter < 3) {
-		if (dots == '...') dots = '';
-		else dots += '.';
-		window.setTimeout(function(){setRes('Считаем секунды'+dots);out(dots, ++counter);}, 400);
-		return;
-	}
+    if (time == -1 || counter < 3) {
+        if (dots == '...') dots = '';
+        else dots += '.';
+        window.setTimeout(function(){setRes('Считаем секунды'+dots);out(dots, ++counter);}, 400);
+        return;
+    }
 
-	if (time == -2) fail(1);
-	else success();
+    if (time == -2) fail(1);
+    else success();
 }
 
 function flood() {
@@ -89,9 +89,9 @@ function flood() {
 }
 
 function seconds(data) {
-	var parsed = $.parseHTML(data.responseText);
-	var postTime = $(parsed).find('.story__date').attr('title');
-	var commentBody = $(parsed).find(comment)[0];
+    var parsed = $.parseHTML(data.responseText);
+    var postTime = $(parsed).find('.story__date').attr('title');
+    var commentBody = $(parsed).find(comment)[0];
     var commentTime = commentBody.getElementsByTagName('time')[0].getAttribute('datetime');
 
     var replyBody = commentBody.parentElement.parentElement;
@@ -99,36 +99,36 @@ function seconds(data) {
     if (replyBody.getAttribute('class') == 'b-comment')
         replyTime = replyBody.getElementsByTagName('time')[0].getAttribute('datetime');
 
-	if (isInt(commentTime) && isInt(postTime)) time = commentTime - postTime;
-	else time = -2;
-	if (isInt(replyTime)) diff = commentTime - replyTime;
+    if (isInt(commentTime) && isInt(postTime)) time = commentTime - postTime;
+    else time = -2;
+    if (isInt(replyTime)) diff = commentTime - replyTime;
 
-	console.log(commentTime, postTime, replyTime);
-	console.log(time, diff);
+    console.log(commentTime, postTime, replyTime);
+    console.log(time, diff);
 }
 
 document.forms.url.onsubmit = function() {
-	this.button.disabled = true;
-	time = -1;
+    this.button.disabled = true;
+    time = -1;
     diff = '';
-	var str = url.value;
-	var post = str.slice(0, str.indexOf('#'));
-	comment = '#'+str.slice(str.indexOf('#')+1);
+    var str = url.value;
+    var post = str.slice(0, str.indexOf('#'));
+    comment = '#'+str.slice(str.indexOf('#')+1);
 
-	if (url.value.match(/^\s*$/)) {
-		fail(3);
-		return false;
-	}
+    if (url.value.match(/^\s*$/)) {
+        fail(3);
+        return false;
+    }
 
-	else if (!comment.match(/#comment_\d/) || !str.match(/https?:\/\/(www\.)?(m\.)?pikabu\.ru\/story/)) {
-		fail(2);
-		return false;
-	}
+    else if (!comment.match(/#comment_\d/) || !str.match(/https?:\/\/(www\.)?(m\.)?pikabu\.ru\/story/)) {
+        fail(2);
+        return false;
+    }
 
-	if (post.match(/https?:\/\/(www\.)?m\.pikabu\.ru\/story/))
-		post = post.replace('m.pikabu', 'pikabu');
+    if (post.match(/https?:\/\/(www\.)?m\.pikabu\.ru\/story/))
+        post = post.replace('m.pikabu', 'pikabu');
 
-	$.get(post, seconds, 'html');
-	flood();
-	return false;
+    $.get(post, seconds, 'html');
+    flood();
+    return false;
 }
