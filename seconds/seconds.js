@@ -5,8 +5,8 @@ var url = document.getElementById('url');
 var res = document.getElementById('result');
 
 function isInt(n) {
-  var x = parseFloat(n);
-  return !isNaN(n) && (x | 0) === x;
+    var x = parseFloat(n);
+    return !isNaN(n) && (x | 0) === x;
 }
 
 function setRes(str, add) {
@@ -39,21 +39,17 @@ function format(sec, gone, t) {
     if (t % 100 < 10 || t % 100 > 20) {
         if (t % 10 == 1) {
             sec += 'a';
-            gone += 'a ';
+            gone[5] = 'a';
         }
-        else if (t % 10 < 5 && t % 10) {
+        else if (t % 10 < 5 && t % 10)
             sec += 'ы';
-            gone += 'и ';
-        }
-        else gone += 'o ';
     }
-    else gone += 'о ';
 
     return {sec:sec, gone:gone};
 }
 
 function success() {
-    var words = format (' секунд', 'прошл', time);
+    var words = format (' секунд', 'прошло ', time);
     setRes('C момента публикации поста ' + words.gone + time + words.sec);
 
     if (isInt(diff))
